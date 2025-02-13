@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: rgb(156, 255, 169);
+    background-color: #f6f6f8;
     font-family: Arial, sans-serif;
 
   
@@ -267,11 +267,11 @@ nav li ul {
 }
 
 nav li:hover > ul {
-    display: block;
+    display: none; /* Removemos el comportamiento hover */
 }
 
-nav li ul li {
-    display: block;
+nav li ul.show-submenu {
+    display: block; /* Nueva clase para mostrar submenús */
 }
 
 /* Ajustar el header para que siempre esté por encima */
@@ -371,7 +371,11 @@ header h1 {
 }
 
 .nav-menu li:hover > ul {
-    display: block;
+    display: none; /* Removemos el comportamiento hover */
+}
+
+.nav-menu ul ul.show-submenu {
+    display: block; /* Nueva clase para mostrar submenús */
 }
 
 .nav-menu ul ul li {
@@ -430,6 +434,82 @@ header h1 {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+/* Estilos para el formulario */
+.contact-form {
+    max-width: 800px;
+    margin: 120px auto 0;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Estilos para inputs y labels */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estilos específicos para radio buttons y checkboxes */
+.form-group input[type="radio"],
+.form-group input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto;
+    display: inline-block;
+}
+
+.form-group input[type="radio"] + label,
+.form-group input[type="checkbox"] + label {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/* Estilos para los botones */
+.form-buttons {
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333; /* Color gris oscuro */
+    color: white; /* Texto blanco */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.form-buttons button[type="submit"] {
+    background-color: #444; /* Gris más oscuro para el botón enviar */
+}
+
+.form-buttons button[type="reset"] {
+    background-color: #666; /* Gris más claro para el botón limpiar */
+}
+
+.form-buttons button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+.form-buttons button:active {
+    transform: translateY(1px);
+}
+
+/* Estilo para mensaje de éxito */
+.success-message {
+    display: none;
+    color: #28a745;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
 /* Responsive design */
 
 /* Móvil - hasta 600px */
@@ -451,6 +531,35 @@ header h1 {
     
     .nav-menu.active {
         display: block;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+    }
+
+    .nav-menu li {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu ul ul {
+        position: static;
+        width: 100%;
+        display: none;
+        background: rgba(210, 255, 216, 0.9);
+    }
+
+    .nav-menu li:hover > ul {
+        display: block;
+    }
+
+    .nav-menu ul ul.show-submenu {
+        display: block; /* Nueva clase para mostrar submenús */
+    }
+
+    .nav-menu ul ul li {
+        padding-left: 20px;
     }
 
     .footer-section {
@@ -481,6 +590,35 @@ header h1 {
     
     .nav-menu.active {
         display: block;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+    }
+
+    .nav-menu li {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu ul ul {
+        position: static;
+        width: 100%;
+        display: none;
+        background: rgba(210, 255, 216, 0.9);
+    }
+
+    .nav-menu li:hover > ul {
+        display: block;
+    }
+
+    .nav-menu ul ul.show-submenu {
+        display: block; /* Nueva clase para mostrar submenús */
+    }
+
+    .nav-menu ul ul li {
+        padding-left: 20px;
     }
 
     .footer-section {
@@ -524,7 +662,11 @@ header h1 {
     }
 
     .nav-menu li:hover > ul {
-        display: block;
+        display: none; /* Removemos el comportamiento hover */
+    }
+
+    .nav-menu ul ul.show-submenu {
+        display: block; /* Nueva clase para mostrar submenús */
     }
 
     .hamburger-menu {
@@ -534,4 +676,38 @@ header h1 {
     .destino {
         flex: 1 1 calc(50% - 20px); /* Dos elementos por fila en PC */
     }
+}
+
+.cookie-notice {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.cookie-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    text-align: center;
+    margin: 20px;
+}
+
+.cookie-content h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.cookie-content p {
+    color: #666;
+    line-height: 1.6;
 }

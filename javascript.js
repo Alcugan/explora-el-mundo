@@ -30,3 +30,21 @@ document.querySelectorAll('.manual-btn').forEach(function(btn, index) {
 
 // Iniciar el slider automático
 startAutoSlide();
+
+// Manejo de cookies
+document.addEventListener('DOMContentLoaded', function() {
+    const cookieMessage = document.getElementById('cookieMessage');
+    
+    // Comprobar si ya se aceptaron las cookies
+    if (!localStorage.getItem('cookiesAccepted')) {
+        cookieMessage.style.display = 'flex';
+    } else {
+        cookieMessage.style.display = 'none';
+    }
+
+    // Evento click para aceptar cookies
+    cookieMessage.addEventListener('click', function() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        cookieMessage.style.display = 'none';
+    });
+});

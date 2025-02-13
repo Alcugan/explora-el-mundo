@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="estilo.css" rel="stylesheet" media="screen">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explora el Mundo - Turismo y Viajes</title>
+</head>
+<body>
+    <!-- Menú de navegación -->
+ <!-- Menú de navegación -->
+ <header>
+    <h1>Explora el Mundo</h1>
+    <div class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Inicio</a>
+                <ul>
+                    <li><a href="#destinos">Destinos Populares</a></li>
+                    <li><a href="#ofertas">Ofertas</a></li>
+                </ul>
+            </li>
+            <li class="has-submenu"><a href="destinos.html">Destinos</a>
+                <ul class="submenu">
+                    <li><a href="europa.html">Europa</a></li>
+                    <li><a href="asia.html">Asia</a></li>
+                    <li><a href="america.html">América</a></li>
+                </ul>
+            </li>
+            <li class="has-submenu"><a href="servicios.html">Servicios</a>
+                <ul class="submenu">
+                    <li><a href="reservas.html">Reservas</a></li>
+                    <li><a href="actividades.html">Actividades</a></li>
+                </ul>
+            </li>
+            <li class="has-submenu"><a href="sobre-nosotros.html">Sobre Nosotros</a>
+                <ul class="submenu">
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </li>
+            <li class="has-submenu"><a href="contacto.html">Contacto</a>
+                <ul class="submenu">
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+    <!-- Slider de imágenes con destinos populares -->
+    <div class="slider">
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1" checked>
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <input type="radio" name="radio-btn" id="radio5">
+    
+            <div class="slide first">
+                <img src="imagenes/riojaneiro.jpg" alt="Destino 1">
+            </div>
+            <div class="slide">
+                <img src="imagenes/nyc.jpg" alt="Destino 2">
+            </div>
+            <div class="slide">
+                <img src="imagenes/sanfrancisco.jpg" alt="Destino 3">
+            </div>
+            <div class="slide">
+                <img src="imagenes/venecia.jpg" alt="Destino 4">
+            </div>
+            <div class="slide">
+                <img src="imagenes/shangai.jpg" alt="Destino 5">
+            </div>
+    
+            <div class="navegation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+                <div class="auto-btn5"></div>
+            </div>
+
+            <div class="manual-navigation">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+                <label for="radio5" class="manual-btn"></label>
+            </div>
+        </div>
+    </div>
+    <div class="ofertas">
+        <p>Precios competitivos</p>
+        <p>Incriebles actividades</p>
+        <p>Trato impecable</p>
+        <p>Servicio al cliente</p>
+        
+    </div>
+
+    <!-- Sección de destinos -->
+    <h2>Destinos Populares</h2>
+    <section class="destinos-centrados">
+        <div class="destino">
+            <img src="imagenes/riojaneiro.jpg" alt="RioJaneiro" class="tamañoimagen">
+            <h3>RioJaneiro</h3>
+            <p>Vacaciones de ensueño con las playas brasileñas.</p>
+        </div>
+        <div class="destino">
+            <img src="imagenes/nyc.jpg" alt="nyc" class="tamañoimagen">
+            <h3>New York City</h3>
+            <p>Visita la emblemática nueva york de las peliculas americanas.</p>
+        </div>
+        </div>
+        <div class="destino">
+            <img src="imagenes/sanfrancisco.jpg" alt="sanfrancisco" class="tamañoimagen">
+            <h3>San Francisco</h3>
+            <p>Descubre California con una de sus ciudades mas icónicas.</p>
+        </div>
+        <div class="destino">
+            <img src="imagenes/venecia.jpg" alt="Venecia" class="tamañoimagen">
+            <h3>Venecia</h3>
+            <p>Un paseo en barco por la mítica Venecia.</p>
+        </div>
+        </div>
+        <div class="destino">
+            <img src="imagenes/shangai.jpg" alt="shangai" class="tamañoimagen">
+            <h3>Shangai</h3>
+            <p>Buscas algo mas oriental?.</p>
+        </div>
+        <div class="destino">
+            <img src="imagenes/paris.jpg" alt="París" class="tamañoimagen">
+            <h3>París</h3>
+            <p>Disfruta de la ciudad del amor con tours exclusivos.</p>
+        </div>
+      
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: info@viajes.com</p>
+                <p>Teléfono: +34 123 456 789</p>
+                <p>Dirección: Calle Principal 123, Madrid</p>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociales</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Útiles</h3>
+                <ul>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tu Empresa de Viajes. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    
+    
+    <script src="menu.js"></script>
+    <script src="javascript.js"></script>
+</body>
+</html>

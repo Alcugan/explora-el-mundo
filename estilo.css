@@ -1,0 +1,537 @@
+/* Estilos generales */
+/* Reset basico para todos los elementos*/ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(156, 255, 169);
+    font-family: Arial, sans-serif;
+
+  
+}
+
+.tamañoimagen {
+    width: 70%;
+    height: auto;
+}
+
+.destinos-centrados {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+.destino {
+    text-align: center;
+    flex: 1 1 calc(50% - 20px); /* Dos elementos por fila */
+    
+}
+
+.slider {
+    border-radius: 10px;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 100px;
+}
+
+.slides {
+    display: flex;
+    width: 500%;
+    height: 600px;
+    transition: 2s;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.slide {
+    width: 20%;
+    height: 600px;
+    transition: 2s;
+}
+
+.slide img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.ofertas {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    font-weight: bold;
+}
+
+/* Navegación manual */
+.manual-navigation {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid rgb(210, 255, 216);
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 40px;
+}
+
+.manual-btn:hover {
+    background: rgb(210, 255, 216);
+}
+
+/* Navegación automática */
+.navegation-auto {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.navegation-auto div {
+    border: 2px solid rgb(210, 255, 216);
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navegation-auto div:not(:last-child) {
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navegation-auto .auto-btn1 {
+    background: rgb(245, 245, 245);
+}
+
+#radio2:checked ~ .navegation-auto .auto-btn2 {
+    background: red;
+}
+
+#radio3:checked ~ .navegation-auto .auto-btn3 {
+    background: rgb(238, 255, 0);
+}
+
+#radio4:checked ~ .navegation-auto .auto-btn4 {
+    background: black;
+}
+
+#radio5:checked ~ .navegation-auto .auto-btn5 {
+    background: pink;
+}
+
+#radio1:checked ~ .slide.first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .slide.first {
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .slide.first {
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .slide.first {
+    margin-left: -60%;
+}
+
+#radio5:checked ~ .slide.first {
+    margin-left: -80%;
+}
+
+#radio1:checked ~ .slides {
+    transform: translateX(0);
+}
+
+#radio2:checked ~ .slides {
+    transform: translateX(-20%);
+}
+
+#radio3:checked ~ .slides {
+    transform: translateX(-40%);
+}
+
+#radio4:checked ~ .slides {
+    transform: translateX(-60%);
+}
+
+#radio5:checked ~ .slides {
+    transform: translateX(-80%);
+}
+
+/* Configuración de la posición de cada slide */
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+    margin-left: -60%;
+}
+
+#radio5:checked ~ .first {
+    margin-left: -80%;
+}
+
+.slider-section {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.pause-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.slider-container {
+    display: flex;
+    width: 200%;
+    animation: bannermove 20s linear infinite;
+}
+
+.slider-container.paused {
+    animation-play-state: paused;
+}
+
+.slider-set {
+    width: 100%;
+}
+
+.slider-set ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.slider-set li {
+    width: 100%;
+    height: 600px;
+}
+
+.slider-set img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilos para menú desplegable */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+    position: relative;
+}
+
+nav li ul {
+    display: none;
+    position: absolute;
+    background: rgb(210, 255, 216);
+    width: 200px;
+}
+
+nav li:hover > ul {
+    display: block;
+}
+
+nav li ul li {
+    display: block;
+}
+
+/* Ajustar el header para que siempre esté por encima */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgb(210, 255, 216);
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px black;
+}
+
+header h1 {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.nav-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: rgb(210, 255, 216);
+    padding-top: 60px;
+    transition: 0.4s;
+    z-index: 1000;
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+.nav-menu li {
+    padding: 15px 25px;
+}
+
+.nav-menu a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* Animación para las barras del menú */
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu > ul > li {
+    display: inline-block;
+    position: relative;
+    padding: 15px;
+}
+
+.nav-menu ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgb(210, 255, 216);
+    width: 200px;
+}
+
+.nav-menu li:hover > ul {
+    display: block;
+}
+
+.nav-menu ul ul li {
+    display: block;
+    padding: 10px;
+}
+
+.footer {
+    background-color: rgb(210, 255, 216);
+    padding: 40px 0 20px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+}
+
+.footer-section h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+
+/* Móvil - hasta 600px */
+@media screen and (max-width: 500px) {
+    .slider {
+        width: 100%;
+        height: 400px;
+        margin-top: 150px;
+    }
+    
+    .destino {
+        flex: 1 1 100%; /* Un elemento por fila en móviles */
+    }
+    
+
+    .hamburger-menu {
+        display: block;
+    }
+    
+    .nav-menu.active {
+        display: block;
+    }
+
+    .footer-section {
+        min-width: 100%;
+        text-align: center;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+/* Tableta - 601px a 1024px */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .slider {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .destino {
+    
+        flex: 1 1 calc(50% - 20px); /* Dos elementos por fila en tabletas */
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+    
+    .nav-menu.active {
+        display: block;
+    }
+
+    .footer-section {
+        min-width: 100%;
+        text-align: center;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+/* PC - desde 1025px en adelante */
+@media screen and (min-width: 1025px) {
+    .nav-menu {
+        display: flex;
+        justify-content: center;
+        position: static;
+        width: 100%;
+        height: auto;
+        background: none;
+        padding-top: 0;
+        transition: none;
+    }
+
+    .nav-menu ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav-menu li {
+        padding: 15px;
+    }
+
+    .nav-menu ul ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgb(210, 255, 216);
+        width: 200px;
+    }
+
+    .nav-menu li:hover > ul {
+        display: block;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+    
+    .destino {
+        flex: 1 1 calc(50% - 20px); /* Dos elementos por fila en PC */
+    }
+}

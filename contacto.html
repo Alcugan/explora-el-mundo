@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="estilo.css" rel="stylesheet" media="screen">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Explora el Mundo</title>
+</head>
+<body>
+    <!-- Menú de navegación -->
+    <header>
+        <!-- ... (estructura común del encabezado) ... -->
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <section class="contact-form">
+            <h2>Contacta con Nosotros</h2>
+            <form action="#" method="post">
+                <!-- Cajas de texto -->
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- Lista select desplegable -->
+                <div class="form-group">
+                    <label for="destino">Destino de interés:</label>
+                    <select id="destino" name="destino">
+                        <option value="">Selecciona un destino</option>
+                        <option value="paris">París</option>
+                        <option value="venecia">Venecia</option>
+                        <option value="nyc">Nueva York</option>
+                        <option value="tokio">Tokio</option>
+                    </select>
+                </div>
+
+                <!-- Área de texto -->
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+                </div>
+
+                <!-- Checkboxes -->
+                <div class="form-group">
+                    <h3>Servicios adicionales:</h3>
+                    <input type="checkbox" id="guia" name="servicios" value="guia">
+                    <label for="guia">Guía turístico</label>
+
+                    <input type="checkbox" id="transporte" name="servicios" value="transporte">
+                    <label for="transporte">Transporte privado</label>
+
+                    <input type="checkbox" id="seguro" name="servicios" value="seguro">
+                    <label for="seguro">Seguro de viaje</label>
+                </div>
+
+                <!-- Radio buttons -->
+                <div class="form-group">
+                    <h3>Tipo de viaje:</h3>
+                    <input type="radio" id="individual" name="tipo_viaje" value="individual">
+                    <label for="individual">Individual</label>
+
+                    <input type="radio" id="pareja" name="tipo_viaje" value="pareja">
+                    <label for="pareja">Pareja</label>
+
+                    <input type="radio" id="grupo" name="tipo_viaje" value="grupo">
+                    <label for="grupo">Grupo</label>
+                </div>
+
+                <!-- Botones -->
+                <div class="form-buttons">
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Limpiar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <!-- ... (estructura común del pie de página) ... -->
+    </footer>
+
+    <script src="menu.js"></script>
+    <script src="javascript.js"></script>
+</body>
+</html>

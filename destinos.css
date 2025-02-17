@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FBFFE4;
+    font-family: Arial, sans-serif;
+}
+
+.fondo {
+    position: relative; /* Necesario para posicionar el texto dentro del contenedor */
+    width: 100%;     
+    height: 500px;   
+    margin-top: 50px; 
+    overflow: hidden; /* Asegura que el contenido no se salga del contenedor */
+}
+
+.fondo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+}
+
+.texto-sobre-imagen {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(0, -50%);
+    color: white;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.texto-sobre-imagen-derecha {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translate(0, -50%);
+    color: white;
+    text-align: right;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+.texto-sobre-imagen h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.texto-sobre-imagen p {
+    margin: 10px 0 0;
+    font-size: 1.2em;
+}
+
+.grupos-texto {
+    position: absolute;
+    bottom: 0; /* Posiciona los grupos de texto en la parte inferior */
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 10px 0;
+    box-sizing: border-box; /* Incluye el padding en el tamaño total */
+}
+
+.grupo {
+    text-align: center;
+    color: white; /* Color del texto */
+}
+
+.grupo h2 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.grupo p {
+    margin: 10px 0 0;
+    font-size: 1em;
+}
+
+/* Estilos para la nueva sección de guía */
+.guia {
+    padding: 50px 20px;
+    background-color: #FBFFE4;
+    text-align: center;
+}
+
+.guia h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.sitios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.sitio {
+    width: 45%;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+.sitio img {
+    width: 100%;
+    height: 500px; /* Establece una altura fija para todas las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor manteniendo la proporción */
+
+}
+
+.sitio h3 {
+    font-size: 1.5em;
+    margin: 15px 0;
+}
+
+.sitio p {
+    padding: 0 15px 15px;
+    font-size: 1em;
+    color: #666;
+}

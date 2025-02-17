@@ -280,7 +280,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgb(210, 255, 216);
+    background: rgb(255, 0, 85);
     z-index: 1000;
     padding: 10px 0;
     box-shadow: 0 2px 5px black;
@@ -288,8 +288,11 @@ header {
 
 header h1 {
     font-size: 1.5em;
-    margin: 0;
     padding: 0 20px;
+    display: flex;
+    align-items: center;
+    height: 70%;
+    position: absolute;
 }
 
 .hamburger-menu {

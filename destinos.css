@@ -23,7 +23,7 @@ body {
     object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
 }
 
-.texto-sobre-imagen {
+.texto-sobre-imagen-izquierda {
     position: absolute;
     top: 50%;
     left: 10%;
@@ -47,10 +47,26 @@ body {
     border-radius: 10px;
 }
 
+.texto-sobre-imagen-centro {
+    position: absolute;
+    top: 50%;
+    right: 40%;
+    transform: translate(0, -50%);
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
 
 .texto-sobre-imagen h1 {
     margin: 0;
     font-size: 2.5em;
+}
+
+.grupo p{
+    color: #333;
 }
 
 .texto-sobre-imagen p {
@@ -65,7 +81,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    background-color: rgba(255, 255, 255, 0.705); /* Fondo semitransparente */
     padding: 10px 0;
     box-sizing: border-box; /* Incluye el padding en el tamaño total */
 }
@@ -111,13 +127,14 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .sitio img {
     width: 100%;
     height: 500px; /* Establece una altura fija para todas las imágenes */
     object-fit: cover; /* Asegura que la imagen cubra todo el contenedor manteniendo la proporción */
-
+    transition: transform 0.3s ease;
 }
 
 .sitio h3 {
@@ -130,3 +147,9 @@ body {
     font-size: 1em;
     color: #666;
 }
+
+.sitio:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+

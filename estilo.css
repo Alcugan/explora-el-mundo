@@ -31,19 +31,17 @@ body {
 }
 
 .slider {
-    border-radius: 10px;
     width: 100%;
     height: 600px;
     overflow: hidden;
     position: relative;
-    margin-top: 100px;
+    margin-top: 73px;
 }
 
 .slides {
     display: flex;
     width: 500%;
     height: 600px;
-    transition: 2s;
 }
 
 input[type="radio"] {
@@ -53,7 +51,7 @@ input[type="radio"] {
 .slide {
     width: 20%;
     height: 600px;
-    transition: 2s;
+    transition: 1s;
 }
 
 .slide img {
@@ -81,7 +79,7 @@ input[type="radio"] {
     min-width: 200px;
     margin: 0;
     padding: 20px;
-    background: white;
+    background: #B3D8A8;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     font-size: 1.2em;
@@ -221,76 +219,6 @@ input[type="radio"] {
     transform: translateX(-80%);
 }
 
-/* Configuración de la posición de cada slide */
-#radio1:checked ~ .first {
-    margin-left: 0;
-}
-
-#radio2:checked ~ .first {
-    margin-left: -20%;
-}
-
-#radio3:checked ~ .first {
-    margin-left: -40%;
-}
-
-#radio4:checked ~ .first {
-    margin-left: -60%;
-}
-
-#radio5:checked ~ .first {
-    margin-left: -80%;
-}
-
-.slider-section {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.pause-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 1;
-    padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.7);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.slider-container {
-    display: flex;
-    width: 200%;
-    animation: bannermove 20s linear infinite;
-}
-
-.slider-container.paused {
-    animation-play-state: paused;
-}
-
-.slider-set {
-    width: 100%;
-}
-
-.slider-set ul {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.slider-set li {
-    width: 100%;
-    height: 600px;
-}
-
-.slider-set img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
 /* Estilos para menú desplegable */
 nav ul {
@@ -325,6 +253,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    height: 73px;
     background: #3D8D7A;
     z-index: 1000;
     padding: 10px 0;
@@ -339,6 +268,19 @@ header h1 {
     height: 70%;
     position: absolute;
     color: #FBFFE4;
+    text-decoration: none; /* Elimina el subrayado del enlace */
+}
+
+header h1 a {
+    color: #FBFFE4;
+    text-decoration: none;
+    font-size: 1em; /* Tamaño relativo al h1 */
+}
+
+
+header h1 a:hover {
+    color: #B3D8A8;
+    transition: color 0.3s ease;
 }
 
 .hamburger-menu {
@@ -359,16 +301,14 @@ header h1 {
 }
 
 .nav-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: -300px;
-    width: 300px;
-    height: 100vh;
-    background-color: rgb(210, 255, 216);
-    padding-top: 60px;
-    transition: 0.4s;
-    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    padding: 20px;
 }
 
 .nav-menu.active {
@@ -382,7 +322,8 @@ header h1 {
 .nav-menu a {
     color: #FBFFE4;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.1em;
+    padding: 10px;
 }
 
 /* Animación para las barras del menú */
@@ -399,28 +340,47 @@ header h1 {
 }
 
 .nav-menu ul {
+    display: flex;
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
+
 .nav-menu > ul > li {
-    display: inline-block;
     position: relative;
-    padding: 15px;
+    margin: 0 15px;
+}
+
+.nav-menu > ul > li > a {
+    color: #FBFFE4; /* Color claro para el menú principal */
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px;
+}
+
+.nav-menu ul ul li a {
+    color: #333; /* Color oscuro para el texto */
+    display: block;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
 }
 
 .nav-menu ul ul {
-    display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background: rgb(210, 255, 216);
-    width: 200px;
+    background: #B3D8A8;
+    width: 90%; /* Aumentamos el ancho */
+    display: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 0 0 10px 10px;
+    padding: 10px 0;
+    z-index: 1000;
 }
 
-.nav-menu li:hover > ul {
-    display: none; /* Removemos el comportamiento hover */
+.nav-menu ul li:hover > ul {
+    display: block;
 }
 
 .nav-menu ul ul.show-submenu {
@@ -428,8 +388,21 @@ header h1 {
 }
 
 .nav-menu ul ul li {
-    display: block;
-    padding: 10px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap; /* Evita que el texto se rompa en múltiples líneas */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    text-overflow: ellipsis; /* Muestra ... si el texto es muy largo */
+}
+
+.nav-menu ul ul li:last-child {
+    border-bottom: none;
+}
+
+.nav-menu ul ul li:hover {
+    background: #9DC88D; /* Color más oscuro al hover */
+    padding-left: 25px; /* Efecto de deslizamiento */
 }
 
 .footer {
@@ -561,21 +534,39 @@ header h1 {
 
 /* Responsive design */
 
-/* Móvil - hasta 600px */
+/* Móvil - hasta 500px */
 @media screen and (max-width: 500px) {
     .slider {
         width: 100%;
         height: 400px;
-        margin-top: 150px;
+        margin-top: 73px;
     }
     
     .destino {
-        flex: 1 1 100%; /* Un elemento por fila en móviles */
+        flex: 1 1 100%;
+        width: 95%;
+        margin: 20px auto;
     }
     
+    .nav-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 40%;
+        height: 100vh;
+        background: #B3D8A8;
+        padding-top: 60px;
+        transition: 0.4s;
+        z-index: 1000;
+    }
 
     .hamburger-menu {
         display: block;
+    }
+    
+    .hamburger-menu.active ~ .nav-menu a {
+        color: #666; /* Color gris para el menú hamburguesa desplegado */
     }
     
     .nav-menu.active {
@@ -621,24 +612,55 @@ header h1 {
     }
 }
 
-/* Tableta - 601px a 1024px */
-@media screen and (min-width: 601px) and (max-width: 1024px) {
+/* Tableta - 501px a 1024px */
+@media screen and (min-width: 501px) and (max-width: 1024px) {
     .slider {
-        width: 90%;
-        margin: 0 auto;
+        width: 100%;
+        margin-top: 73px;
     }
     
     .destino {
-    
-        flex: 1 1 calc(50% - 20px); /* Dos elementos por fila en tabletas */
+        flex: 1 1 100%; /* Un elemento por fila en móviles */
+        width: 90%; /* Un elemento por fila */
+        margin: 20px auto;
     }
 
     .hamburger-menu {
         display: block;
     }
     
+    .nav-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 30%;
+        height: 100vh;
+        background: #B3D8A8;
+        padding-top: 60px;
+        transition: 0.4s;
+        z-index: 1000;
+    }
+
+    .hamburger-menu.active ~ .nav-menu a {
+        color: #666; /* Color gris para el menú hamburguesa desplegado */
+    }
+
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
     .nav-menu.active {
         display: block;
+        right: 0;
     }
 
     .nav-menu ul {
@@ -646,16 +668,16 @@ header h1 {
     }
 
     .nav-menu li {
-        display: block;
         width: 100%;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 15px 25px;
+        border-bottom: 1px solid rgba(251, 255, 228, 0.1);
     }
 
     .nav-menu ul ul {
         position: static;
-        width: 100%;
-        display: none;
-        background: rgba(210, 255, 216, 0.9);
+        width: 95%; /* Casi todo el ancho disponible */
+        margin: 0 auto; /* Centrar el submenú */
+        background: #4CAF50;
     }
 
     .nav-menu li:hover > ul {
@@ -667,7 +689,9 @@ header h1 {
     }
 
     .nav-menu ul ul li {
-        padding-left: 20px;
+        padding: 10px 15px;
+        font-size: 0.9em;
+        text-align: left; /* Alineación a la izquierda */
     }
 
     .footer-section {
@@ -682,6 +706,9 @@ header h1 {
 
 /* PC - desde 1025px en adelante */
 @media screen and (min-width: 1025px) {
+
+
+
     .nav-menu {
         display: flex;
         justify-content: center;
@@ -724,6 +751,7 @@ header h1 {
     
     .destino {
         flex: 1 1 calc(50% - 20px); /* Dos elementos por fila en PC */
+        width: 400px;
     }
 }
 
@@ -795,7 +823,7 @@ h2::after {
 
 .destino {
     width: 400px;;
-    background: white;
+    background: #B3D8A8;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -848,18 +876,3 @@ h2::after {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .destinos-centrados {
-        padding: 10px;
-    }
-    
-    .destino {
-        width: calc(100% - 20px);
-    }
-
-    h2 {
-        font-size: 2em;
-        margin: 30px 0;
-    }
-}

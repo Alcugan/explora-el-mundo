@@ -6,14 +6,17 @@ var timer = null;
 function startAutoSlide() {
     if (timer) clearInterval(timer);
     
+// Activar el primer radio button inmediatamente
+document.getElementById('radio' + counter).checked = true;
+
     timer = setInterval(function(){
-        document.getElementById('radio' + counter).checked = true;
         counter++;
         
         if(counter > 5){
             counter = 1;
         }
-    }, 5000);
+        document.getElementById('radio' + counter).checked = true;
+    }, 2500);
 }
 
 // Manejador para los clicks manuales

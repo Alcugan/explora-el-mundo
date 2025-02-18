@@ -1,0 +1,151 @@
+.about-container {
+    max-width: 1200px;
+    margin: 100px auto 40px;
+    padding: 0 20px;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: #B3D8A8;
+    border-radius: 15px;
+    margin-bottom: 40px;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.historia-contenido {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.historia-contenido p {
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    color: #333;
+    text-align: justify;
+}
+
+.historia-contenido p:last-child {
+    margin-bottom: 0;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.valor {
+    text-align: center;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.valor:hover {
+    transform: translateY(-10px);
+}
+
+.icon {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-style: normal;
+}
+
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin: 40px auto;
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+.miembro {
+    text-align: center;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.miembro:hover {
+    transform: translateY(-10px);
+}
+
+.miembro img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid #B3D8A8;
+}
+
+.miembro h3 {
+    color: #333;
+    margin: 15px 0 5px;
+    font-size: 1.4em;
+}
+
+.miembro p {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.testimonio {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.testimonio p {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.testimonio cite {
+    color: #666;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-container {
+        margin: 80px 10px 20px;
+    }
+
+    .hero-section {
+        padding: 40px 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+}

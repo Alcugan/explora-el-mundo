@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="estilo.css" rel="stylesheet" media="screen">
+    <link href="reservas.css" rel="stylesheet" media="screen">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explora el Mundo - Reservas</title>
+</head>
+<body>
+    <!-- Header existente -->
+    <header>
+        <h1><a href="index.html"> Explora el Mundo</a></h1>
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Inicio</a>
+                <ul>
+                     <li><a href="rio.html">Rio de Janeiro</a></li>
+                     <li><a href="nyc.html">New York</a></li>
+                     <li><a href="san-francisco.html">San Francisco</a></li>
+                     <li><a href="venecia.html">Venecia</a></li>
+                     <li><a href="shangai.html">Shangai</a></li>
+                     <li><a href="paris.html">Paris</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu"><a href="reservas.html">Reservas</a>
+                </li>
+                <li class="has-submenu"><a href="sobre-nosotros.html">Sobre Nosotros</a>
+                </li>
+                <li class="has-submenu"><a href="contacto.html">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+
+    <main class="reservas-container">
+        <h1>Reserva tu Viaje</h1>
+        
+        <div class="search-filters">
+            <div class="filter-group">
+                <label for="destino">Destino</label>
+                <select id="destino" required>
+                    <option value="">Selecciona un destino</option>
+                    <option value="rio">Río de Janeiro</option>
+                    <option value="nyc">Nueva York</option>
+                    <option value="venecia">Venecia</option>
+                    <option value="paris">París</option>
+                    <option value="shangai">Shangai</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="fecha-ida">Fecha de Ida</label>
+                <input type="date" id="fecha-ida" required>
+            </div>
+
+            <div class="filter-group">
+                <label for="fecha-vuelta">Fecha de Vuelta</label>
+                <input type="date" id="fecha-vuelta" required>
+            </div>
+
+            <div class="filter-group">
+                <label for="viajeros">Número de Viajeros</label>
+                <input type="number" id="viajeros" min="1" max="10" value="2">
+            </div>
+        </div>
+
+        <div class="resultados">
+            <h2>Paquetes Disponibles</h2>
+            <div class="paquetes-grid">
+                <!-- Los paquetes se cargarían dinámicamente con JavaScript -->
+                <div class="paquete">
+                    <img src="imagenes/hotel.jpg" alt="Hotel Premium">
+                    <h3>Paquete Premium</h3>
+                    <ul>
+                        <li>Vuelo directo ida y vuelta</li>
+                        <li>Hotel 5 estrellas</li>
+                        <li>Desayuno incluido</li>
+                        <li>Traslados aeropuerto</li>
+                    </ul>
+                    <p class="precio">Desde 1200€</p>
+                    <button class="reservar-btn">Reservar Ahora</button>
+                </div>
+                <!-- Más paquetes... -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer existente -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: info@viajes.com</p>
+                <p>Teléfono: +34 123 456 789</p>
+                <p>Dirección: Calle Principal 123, Madrid</p>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociales</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Útiles</h3>
+                <ul>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tu Empresa de Viajes. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+    <script src="reservas.js"></script>
+</body>
+</html>

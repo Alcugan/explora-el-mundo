@@ -1,33 +1,36 @@
 <?php
-// Recibir los datos del formulario
-$nombre = $_POST['nombre'];
-$email = $_POST['email'];
-$destino = $_POST['destino'];
-$mensaje = $_POST['mensaje'];
-$servicios = isset($_POST['servicios']) ? $_POST['servicios'] : array();
-$tipo_viaje = isset($_POST['tipo_viaje']) ? $_POST['tipo_viaje'] : '';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	// Sanitizar las entradas
+	$nombre = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
+	$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+	$telefono = filter_input(INPUT_POST, 'telefono', FILTER_SANITIZE_STRING);
+	$tipoConsulta = filter_input(INPUT_POST, 'tipo-consulta', FILTER_SANITIZE_STRING);
+	$contacto = filter_input(INPUT_POST, 'contacto', FILTER_SANITIZE_STRING);
+	$mensaje = filter_input(INPUT_POST, 'mensaje', FILTER_SANITIZE_STRING);
 
-// Validar los datos
-if (empty($nombre) || empty($email) || empty($mensaje)) {
-    echo "Por favor, rellena todos los campos obligatorios.";
-    exit;
+	// Validar los datos
+	$errores = [];
+
+	if (empty($nombre) || preg_match('/[$@#]/', $nombre) || preg_match('/^[0-9]/', $nombre)) {
+		$errores[] = "El nombre no es válido";
+	}
+
+	if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		$errores[] = "El email no es válido";
+	}
+
+	if (empty($mensaje) || preg_match('/[$@#]/', $mensaje)) {
+		$errores[] = "El mensaje no es válido";
+	}
+
+	if (empty($errores)) {
+		// Process the form data here
+		echo "Formulario procesado correctamente";
+	} else {
+		// Display errors
+		foreach ($errores as $error) {
+			echo $error . "<br>";
+		}
+	}
 }
-
-// Procesar los datos (aquí puedes agregar el código para guardar en base de datos, enviar emails, etc.)
-$respuesta = array(
-    'status' => 'success',
-    'message' => '¡Mensaje enviado con éxito!',
-    'datos' => array(
-        'nombre' => $nombre,
-        'email' => $email,
-        'destino' => $destino,
-        'mensaje' => $mensaje,
-        'servicios' => $servicios,
-        'tipo_viaje' => $tipo_viaje
-    )
-);
-
-// Devolver respuesta en formato JSON
-header('Content-Type: application/json');
-echo json_encode($respuesta);
 ?>

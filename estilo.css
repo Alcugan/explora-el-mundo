@@ -862,17 +862,5 @@ h2::after {
     margin: 0;
 }
 
-/* Añadir etiqueta de precio */
-.destino::before {
-    content: 'Desde 599€';
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(255,255,255,0.9);
-    padding: 8px 15px;
-    border-radius: 25px;
-    font-weight: bold;
-    color: #4CAF50;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+
 

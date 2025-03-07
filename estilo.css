@@ -862,5 +862,27 @@ h2::after {
     margin: 0;
 }
 
+/*Boton para reservar en los destinos*/
 
+.ajustar-boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
 
+.boton-reserva {
+    text-decoration: none;
+    padding: 12px 25px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+.boton-reserva:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}

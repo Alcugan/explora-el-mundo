@@ -1,6 +1,6 @@
 # Explora el Mundo
 
-![Explora el Mundo](https://alcugan.github.io/explora-el-mundo/)
+![Explora el Mundo](https://alcugan.github.io/explora-el-mundo/imagenes/previewweb.png)
 
 ## Descripción
 Proyecto web final - "Explora el Mundo" es una aplicación web que permite a los usuarios explorar diferentes lugares del mundo a través de información detallada y atractiva.
